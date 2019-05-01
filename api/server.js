@@ -8,6 +8,10 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 
+server.get("/", (req, res) => {
+    res.send("It's working!");
+});
+
 server.use('/api/cohorts', cohortsRouter);
 
 module.exports = server;
